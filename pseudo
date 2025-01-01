@@ -1,0 +1,417 @@
+
+Here is the pseudocode for the first 10 programs:
+
+Program 1: Create a new process and display its PID and parent PID
+Start
+Call the fork() system call to create a new process.
+If fork() returns:
+0: This is the child process.
+Print "Child Process: PID and Parent PID".
+> 0: This is the parent process.
+Print "Parent Process: PID".
+< 0: Fork failed.
+Print "Fork failed".
+End
+Program 2: Copy content from one file to another
+Start
+Open source file in read mode.
+Open destination file in write mode.
+If either file fails to open, exit with an error.
+While not EOF of the source file:
+Read a character from the source file.
+Write the character to the destination file.
+Close both files.
+Print "File copied successfully".
+End
+Program 3: First Come First Serve (FCFS) CPU Scheduling
+Start
+Initialize Waiting Time for the first process as 0.
+For each process from 2 to N:
+Calculate Waiting Time as the sum of all previous processes' burst times.
+Calculate Turnaround Time as the sum of Burst Time and Waiting Time for each process.
+Print process details, average waiting time, and average turnaround time.
+End
+Program 4: Shortest Job First (SJF) Scheduling
+Start
+Sort all processes by their burst times in ascending order.
+Initialize Waiting Time for the first process as 0.
+For each process from 2 to N:
+Calculate Waiting Time as the sum of all previous processes' burst times.
+Calculate Turnaround Time as the sum of Burst Time and Waiting Time for each process.
+Print process details, average waiting time, and average turnaround time.
+End
+Program 5: Priority Scheduling
+Start
+Sort all processes by their priority in ascending order.
+Initialize Waiting Time for the first process as 0.
+For each process from 2 to N:
+Calculate Waiting Time as the sum of all previous processes' burst times.
+Calculate Turnaround Time as the sum of Burst Time and Waiting Time for each process.
+Print process details, average waiting time, and average turnaround time.
+End
+Program 6: Preemptive Priority Scheduling
+Start
+Initialize Remaining Time for all processes as their burst times.
+While all processes are not completed:
+Select the process with the highest priority and remaining burst time > 0.
+Decrease its remaining burst time by 1.
+If remaining burst time becomes 0, calculate its Waiting Time and Turnaround Time.
+Print process details, average waiting time, and average turnaround time.
+End
+Program 7: Non-Preemptive SJF Scheduling
+Start
+Sort all processes by their burst times in ascending order.
+Initialize Waiting Time for the first process as 0.
+For each process from 2 to N:
+Calculate Waiting Time as the sum of all previous processes' burst times.
+Calculate Turnaround Time as the sum of Burst Time and Waiting Time for each process.
+Print process details, average waiting time, and average turnaround time.
+End
+Program 8: Round Robin Scheduling
+Start
+Initialize Remaining Time for all processes as their burst times.
+Set Time Quantum.
+While all processes are not completed:
+For each process:
+If its remaining time > time quantum:
+Execute for time quantum and decrease remaining time.
+Else execute for the remaining time and mark as completed.
+Calculate Waiting Time and Turnaround Time for each process.
+Print process details, average waiting time, and average turnaround time.
+End
+Program 9: Shared Memory IPC
+Start
+Create a shared memory segment.
+Attach the shared memory to the process.
+Write data into the shared memory.
+Detach the shared memory from the process.
+End
+Program 10: Message Queue IPC
+Start
+Create a message queue.
+Send a message to the queue.
+Receive the message from the queue.
+Print the message.
+End
+Let me know if you need further explanations or additional pseudocode!
+
+
+
+
+
+You said:
+next 10 program pseudo code
+ChatGPT said:
+ChatGPT
+Here is the pseudocode for programs 11–20:
+
+Program 11: Multithreading
+Start
+Create two threads.
+Each thread executes a function that prints a specific message.
+Wait for both threads to complete execution (join).
+End
+Program 12: Dining Philosophers Problem
+Start
+Initialize N semaphores (forks) with value 1.
+For each philosopher:
+Think.
+Wait on the left fork semaphore.
+Wait on the right fork semaphore.
+Eat.
+Signal (release) the right fork semaphore.
+Signal (release) the left fork semaphore.
+Wait for all philosophers to finish.
+End
+Program 13: Memory Allocation Strategies (First Fit Example)
+Start
+For each process:
+Search for the first memory block that can accommodate the process.
+If a suitable block is found:
+Allocate the block to the process.
+Reduce the block size by the process size.
+If no suitable block is found:
+Print "Process cannot be allocated".
+End
+Program 14: Single-Level Directory
+Start
+Initialize an array for file names.
+Provide options to:
+Add a file: Append the file name to the array.
+List all files: Print all file names in the array.
+End
+Program 15: Two-Level Directory
+Start
+Initialize a main directory with subdirectories.
+Provide options to:
+Create a subdirectory: Add a subdirectory name.
+Add files to a subdirectory: Append file names to the chosen subdirectory.
+List all subdirectories and their files.
+End
+Program 16: Random Access File for Employee Details
+Start
+Define an Employee structure with fields: ID, Name, and Salary.
+Open a file in binary mode.
+Write multiple employee records to the file.
+Read and print each record sequentially from the file.
+Close the file.
+End
+Program 17: Banker's Algorithm for Deadlock Avoidance
+Start
+Initialize:
+Available resources.
+Maximum resources needed by each process.
+Allocated resources for each process.
+Repeat until all processes are either completed or blocked:
+Check if any process can complete with available resources.
+If yes:
+Mark the process as completed.
+Release its resources back to the available pool.
+If no process can complete, declare a deadlock.
+Print the safe sequence if no deadlock.
+End
+Program 18: Producer-Consumer Problem Using Semaphores
+Start
+Initialize semaphores for empty, full, and mutex.
+For the producer:
+Wait on empty and mutex.
+Add an item to the buffer.
+Signal mutex and full.
+For the consumer:
+Wait on full and mutex.
+Remove an item from the buffer.
+Signal mutex and empty.
+Repeat until all items are produced and consumed.
+End
+Program 19: Mutex Locks for Process Synchronization
+Start
+Initialize a shared variable and a mutex lock.
+For each thread:
+Lock the mutex.
+Increment the shared variable.
+Print the updated value.
+Unlock the mutex.
+Wait for all threads to complete execution.
+End
+Program 20: Reader-Writer Problem Using Semaphores
+Start
+Initialize semaphores for mutex and rw_mutex.
+For the reader:
+Wait on mutex.
+Increment readcount. If this is the first reader, wait on rw_mutex.
+Signal mutex.
+Read data.
+Wait on mutex.
+Decrement readcount. If this is the last reader, signal rw_mutex.
+Signal mutex.
+For the writer:
+Wait on rw_mutex.
+Write data.
+Signal rw_mutex.
+Repeat as necessary.
+End
+Let me know if you need additional pseudocode or further clarifications!
+
+
+
+
+
+You said:
+next 10 pseudo code
+ChatGPT said:
+ChatGPT
+Here is the pseudocode for programs 21–30:
+
+Program 21: Worst Fit Memory Allocation Strategy
+Start
+For each process:
+Search for the memory block with the largest size that can accommodate the process.
+If a suitable block is found:
+Allocate the block to the process.
+Reduce the block size by the process size.
+If no suitable block is found:
+Print "Process cannot be allocated".
+End
+Program 22: Best Fit Memory Allocation Strategy
+Start
+For each process:
+Search for the memory block with the smallest size that can accommodate the process.
+If a suitable block is found:
+Allocate the block to the process.
+Reduce the block size by the process size.
+If no suitable block is found:
+Print "Process cannot be allocated".
+End
+Program 23: First Fit Memory Allocation Strategy
+Start
+For each process:
+Search for the first available memory block that can accommodate the process.
+If a suitable block is found:
+Allocate the block to the process.
+Reduce the block size by the process size.
+If no suitable block is found:
+Print "Process cannot be allocated".
+End
+Program 24: Demonstrate UNIX System Calls for File Management
+Start
+Open a file using the open system call.
+Write data to the file using the write system call.
+Read data from the file using the read system call.
+Close the file using the close system call.
+End
+Program 25: Demonstrate UNIX I/O System Calls
+Start
+Open a file using the open system call.
+Write data to the file using write.
+Use lseek to move the file pointer.
+Read data from the file using read.
+Print the content read from the file.
+Close the file.
+End
+Program 26: Implement File Management Operations
+Start
+Open a file using the open system call.
+Write initial content to the file using write.
+Append additional content to the file using lseek and write.
+Close the file.
+End
+Program 27: Simulate the ls UNIX Command
+Start
+Open the current directory using the opendir system call.
+Read the directory entries one by one using readdir.
+Print the names of all files and subdirectories.
+Close the directory using closedir.
+End
+Program 28: Simulate the grep UNIX Command
+Start
+Open the file in read mode.
+For each line in the file:
+Check if the line contains the specified pattern (substring).
+If the pattern is found:
+Print the line.
+Close the file.
+End
+Program 29: Simulate Classical Process Synchronization Problem
+Start
+Initialize semaphores: empty, full, and mutex.
+For the producer:
+Wait on empty and mutex.
+Add an item to the buffer.
+Signal mutex and full.
+For the consumer:
+Wait on full and mutex.
+Remove an item from the buffer.
+Signal mutex and empty.
+Repeat until all items are produced and consumed.
+End
+Program 30: Demonstrate Thread Operations
+Start
+For each thread:
+Create a thread using pthread_create.
+Execute a function that prints a message and exits the thread using pthread_exit.
+Wait for all threads to complete using pthread_join.
+End
+Let me know if you'd like further clarification or the next set of pseudocode!
+
+
+
+
+
+You said:
+next 10 pseudo code
+ChatGPT said:
+ChatGPT
+Here is the pseudocode for programs 31–40:
+
+Program 31: Simulate FIFO Paging Technique
+Start
+Initialize:
+A frame array with a fixed size.
+Set all frames to -1 (empty).
+For each page request:
+Check if the page is already in the frame:
+If yes, continue.
+If no, replace the oldest page in the frame using a circular index.
+Count and print the total number of page faults.
+End
+Program 32: Simulate LRU Paging Technique
+Start
+Initialize:
+A frame array with a fixed size.
+A used array to track when each page was last accessed.
+For each page request:
+Check if the page is in the frame:
+If yes, update its usage time.
+If no:
+Replace the least recently used page.
+Update the usage time for the new page.
+Count and print the total number of page faults.
+End
+Program 33: Simulate Optimal Paging Technique
+Start
+Initialize:
+A frame array with a fixed size.
+For each page request:
+Check if the page is in the frame:
+If yes, continue.
+If no:
+Find the page in the frame that will not be used for the longest time in the future.
+Replace this page with the new page.
+Count and print the total number of page faults.
+End
+Program 34: Simulate Sequential File Allocation
+Start
+Initialize a sequence of file blocks.
+For each file:
+Assign consecutive blocks starting from the first available block.
+Print the allocated blocks for the file.
+End
+Program 35: Simulate Indexed File Allocation
+Start
+Assign an index block for the file.
+Link the file blocks to the index block.
+Print:
+The index block.
+All the blocks linked to it.
+End
+Program 36: Simulate Linked File Allocation
+Start
+For each file:
+Allocate blocks in non-contiguous locations.
+Link each block to the next using a pointer.
+Print:
+Data and pointers for each block.
+End
+Program 37: Simulate FCFS Disk Scheduling
+Start
+Initialize:
+Current head position.
+A list of disk requests.
+For each request:
+Move the head to the requested position.
+Calculate the movement distance.
+Print the total head movement.
+End
+Program 38: Simulate SCAN Disk Scheduling
+Start
+Sort the disk requests.
+Move the disk head in one direction (e.g., toward the end).
+Service all requests in this direction.
+Reverse the direction and service remaining requests.
+Print the total head movement.
+End
+Program 39: Simulate C-SCAN Disk Scheduling
+Start
+Sort the disk requests.
+Move the disk head in one direction (e.g., toward the end).
+Wrap around to the beginning without servicing requests on the way back.
+Continue servicing requests in the same direction.
+Print the total head movement.
+End
+Program 40: Demonstrate File Access Permissions in Linux
+Start
+Use the stat system call to get file information.
+For the file:
+Check the owner, group, and others' read, write, and execute permissions using bitwise operations.
+Print the permissions in a readable format.
+End
